@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.kongDeploymentName }}
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.kongDeploymentName }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.kongDeploymentName }}
+    spec:
+      containers:
+      - name: {{ .Values.kongDeploymentName }}
+        image: {{ .Values.image }}:{{ .Values.imageTag }}
+        ports:
+        {{- range .Values.ports }}
+        - name: {{ .name }}
+          containerPort: {{ .port }}
+        {{- end }}

@@ -1,0 +1,4 @@
+apiVersion: v2
+name: kong-ingress-controller
+version: 0.1.0
+description: Deploys Kong Ingress Controller to a Kubernetes cluster.
