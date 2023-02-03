@@ -1,1 +1,1 @@
-
+This is a sample helm directory to deploy a Kong Ingress Controller on a Kubernetes cluster. These helm charts include annotations and ingress rules that would implement TLS termination on the ingress controller, re-encrypting traffic and ensuring the backend service receives only encrypted traffic.
